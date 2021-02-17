@@ -36,29 +36,34 @@ const App = () => {
   };
   return (
     <>
-      <h1 data-testid="title">{slides[click].title}</h1>
-      <p data-testid="text">{slides[click].text}</p>
-      <button
-        onClick={handlePrev}
-        data-testid="button-prev"
-        disabled={disabledPrev}
-      >
-        Prev
-      </button>
-      <button
-        onClick={handleNext}
-        data-testid="button-next"
-        disabled={disabledNext}
-      >
-        Next
-      </button>
-      <button
-        onClick={handleReset}
-        data-testid="button-reset"
-        disabled={disabledReset}
-      >
-        Reset
-      </button>
+      <div id="navigation">
+        <div id="slide">
+          <h1 data-testid="title">{slides[click].title}</h1>
+          <p data-testid="text">{slides[click].text}</p>
+        </div>
+
+        <button
+          onClick={handlePrev}
+          data-testid="button-prev"
+          disabled={disabledPrev}
+        >
+          Prev
+        </button>
+        <button
+          onClick={handleNext}
+          data-testid="button-next"
+          disabled={disabledNext}
+        >
+          Next
+        </button>
+        <button
+          onClick={handleReset}
+          data-testid="button-reset"
+          disabled={disabledReset}
+        >
+          Reset
+        </button>
+      </div>
     </>
   );
 };
