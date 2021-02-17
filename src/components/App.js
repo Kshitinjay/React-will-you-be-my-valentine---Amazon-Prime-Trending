@@ -6,9 +6,11 @@ const App = () => {
   const [click, setClick] = useState(0);
   const [disabledNext, setDisabledNext] = useState(false);
   const [disabledPrev, setDisabledPrev] = useState(true);
+  const [disabledReset, setDisabledReset] = useState(true);
 
   const handleNext = () => {
     setDisabledPrev(false);
+    setDisabledReset(false);
     if (click < 4) {
       setClick(click + 1);
       if (click == 3) {
@@ -30,6 +32,7 @@ const App = () => {
     setClick(0);
     setDisabledPrev(true);
     setDisabledNext(false);
+    setDisabledReset(true);
   };
   return (
     <>
@@ -49,7 +52,11 @@ const App = () => {
       >
         Next
       </button>
-      <button onClick={handleReset} data-testid="button-reset">
+      <button
+        onClick={handleReset}
+        data-testid="button-reset"
+        disabled={disabledReset}
+      >
         Reset
       </button>
     </>
