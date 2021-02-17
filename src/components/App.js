@@ -58,7 +58,7 @@ const App = () => {
         </button>
         <button
           onClick={handleReset}
-          data-testid="button-reset"
+          data-testid="button-restart"
           disabled={disabledReset}
         >
           Reset
